@@ -5,6 +5,7 @@
     "email": "jodt5200@gmail.com",
     "url": "https://thomasjodt.github.io"
   },
+  "license": "MIT",
   "private": false,
   "version": "1.0.0",
   "type": "module",
@@ -14,14 +15,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-swipeable-list": "^1.5.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.0.1",
-    "eslint": "^8.0.1",
+    "eslint": "^8.22.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-config-standard-jsx": "^11.0.0",
     "eslint-config-standard-react": "^11.0.1",

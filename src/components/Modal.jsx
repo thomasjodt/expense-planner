@@ -1,7 +1,12 @@
 import cerrarBtn from '../assets/icons/cerrar.svg'
 
-export const Modal = ({ setModal }) => {
-  const handleCloseModal = () => setModal(false)
+export const Modal = ({ setModal, animarModal, setAnimarModal }) => {
+  const handleCloseModal = () => {
+    setAnimarModal(false)
+    setTimeout(() => {
+      setModal(false)
+    }, 500)
+  }
 
   return (
     <div className='modal'>
@@ -12,6 +17,9 @@ export const Modal = ({ setModal }) => {
           onClick={handleCloseModal}
         />
       </div>
+      <form className={`formulario ${animarModal ? 'animar' : 'cerrar'}`}>
+        <legend>Nuevo Gasto</legend>
+      </form>
     </div>
   )
 }

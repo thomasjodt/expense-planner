@@ -7,8 +7,14 @@ export const App = () => {
   const [presupuesto, setPresupuesto] = useState('')
   const [isValidPresupuesto, setIsValidPresupuesto] = useState(false)
   const [modal, setModal] = useState(false)
+  const [animarModal, setAnimarModal] = useState(false)
 
-  const handleNewSpent = () => setModal(true)
+  const handleNewSpent = () => {
+    setModal(true)
+    setTimeout(() => {
+      setAnimarModal(true)
+    }, 500)
+  }
 
   return (
     <div>
@@ -29,7 +35,7 @@ export const App = () => {
           </div>
         )
       }
-      {modal && <Modal setModal={setModal} />}
+      {modal && <Modal animarModal={animarModal} setAnimarModal={setAnimarModal} setModal={setModal} />}
     </div>
   )
 }

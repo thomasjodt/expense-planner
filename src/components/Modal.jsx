@@ -73,7 +73,7 @@ export const Modal = ({ setModal, animarModal, setAnimarModal, guardarGasto }) =
             onChange={(e) => { setCategoria(e.target.value); setMensaje('') }}
             id='categoria'
           >
-            <option selected disabled value=''>-- Seleccione --</option>
+            <option disabled value=''>-- Seleccione --</option>
             <option value='ahorro'>Ahorro</option>
             <option value='comida'>Comida</option>
             <option value='casa'>Casa</option>

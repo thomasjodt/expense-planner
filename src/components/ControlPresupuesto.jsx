@@ -1,7 +1,6 @@
-export const ControlPresupuesto = ({ presupuesto }) => {
-  const formatBudget = (cantidad) =>
-    cantidad.toLocaleString('es-PE', { style: 'currency', currency: 'PEN' })
+import { formatBudget } from '../utils/formatBudget'
 
+export const ControlPresupuesto = ({ presupuesto }) => {
   return (
     <div className='contenedor-presupuesto contenedor sombra dos-columnas'>
       <div>

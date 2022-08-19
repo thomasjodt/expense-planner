@@ -8,6 +8,7 @@ export const App = () => {
   const [isValidPresupuesto, setIsValidPresupuesto] = useState(false)
   const [modal, setModal] = useState(false)
   const [animarModal, setAnimarModal] = useState(false)
+  const [gastos, setGastos] = useState([])
 
   const handleNewSpent = () => {
     setModal(true)
@@ -15,6 +16,8 @@ export const App = () => {
       setAnimarModal(true)
     }, 500)
   }
+
+  const guardarGasto = gasto => setGastos([...gastos, gasto])
 
   return (
     <div>
@@ -35,7 +38,15 @@ export const App = () => {
           </div>
         )
       }
-      {modal && <Modal animarModal={animarModal} setAnimarModal={setAnimarModal} setModal={setModal} />}
+      {
+        modal &&
+          <Modal
+            guardarGasto={guardarGasto}
+            animarModal={animarModal}
+            setAnimarModal={setAnimarModal}
+            setModal={setModal}
+          />
+      }
     </div>
   )
 }

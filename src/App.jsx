@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Header } from './components/Header'
 import iconoNuevoGasto from './assets/icons/nuevo-gasto.svg'
 import { Modal } from './components/Modal'
+import { generarId } from './utils/generarId'
 
 export const App = () => {
   const [presupuesto, setPresupuesto] = useState('')
@@ -17,7 +18,10 @@ export const App = () => {
     }, 500)
   }
 
-  const guardarGasto = gasto => setGastos([...gastos, gasto])
+  const guardarGasto = gasto => {
+    gasto.id = generarId()
+    setGastos([...gastos, gasto])
+  }
 
   return (
     <div>

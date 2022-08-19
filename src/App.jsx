@@ -5,6 +5,9 @@ import iconoNuevoGasto from './assets/icons/nuevo-gasto.svg'
 export const App = () => {
   const [presupuesto, setPresupuesto] = useState('')
   const [isValidPresupuesto, setIsValidPresupuesto] = useState(false)
+  const [modal, setModal] = useState(false)
+
+  const handleNewSpent = () => setModal(true)
 
   return (
     <div>
@@ -17,7 +20,11 @@ export const App = () => {
       {
         isValidPresupuesto && (
           <div className='nuevo-gasto'>
-            <img src={iconoNuevoGasto} alt='Icono de gasto nuevo' />
+            <img
+              src={iconoNuevoGasto}
+              alt='Icono de gasto nuevo'
+              onClick={handleNewSpent}
+            />
           </div>
         )
       }
